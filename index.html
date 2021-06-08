@@ -485,7 +485,7 @@ body footer{
     <script>
       /*
         JS Exercises
-        EX11) Write a function to add a new link into the navbar
+        EX11) Write a function to add a new link into the navbar --
         EX12) Write a function to change the color of the main title
         EX13) Write a function to change the background of the jumbotron
         EX14) Write a function to remove all the links under "Elsewhere"
@@ -509,6 +509,11 @@ body footer{
     }
     newLink()
 
+    const changeTitleColor = function(){
+      let title = document.getElementsByTagName("h1")[0]
+      title.style.color = "yellow"
+    }
+    changeTitleColor()
 
     </script>
   </body>
