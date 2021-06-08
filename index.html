@@ -585,7 +585,22 @@ body footer{
     }
     olderB.addEventListener("click", deletePost)
 
-    
+    let authors = document.getElementsByClassName("author")
+    let author1 = authors[0]
+    let author2 = authors[1]
+    let author3 = authors[2]
+    const authorAllert1 = function(){
+      alert(`Author name: ${author1.innerHTML}`)
+    }
+    const authorAllert2 = function(){
+      alert(`Author name: ${author2.innerHTML}`)
+    }
+    const authorAllert3 = function(){
+      alert(`Author name: ${author3.innerHTML}`)
+    }
+    author1.addEventListener("mouseover", authorAllert1)
+    author2.addEventListener("mouseover", authorAllert2)
+    author3.addEventListener("mouseover", authorAllert3)
     </script>
   </body>
 </html>
