@@ -172,7 +172,7 @@ body footer{
       </div>
 
       <div class="jumbotron p-4 p-md-5 text-white rounded bg-dark">
-        <div class="col-md-6 px-0">
+        <div class="col-md-6 px-0" id="col">
           <h1 class="display-4 font-italic">
             Title of a longer featured blog post
           </h1>
@@ -487,10 +487,10 @@ body footer{
         JS Exercises
         EX11) Write a function to add a new link into the navbar --
         EX12) Write a function to change the color of the main title --
-        EX13) Write a function to change the background of the jumbotron
-        EX14) Write a function to remove all the links under "Elsewhere"
-        EX15) Write a function to change the column size for heading in jumbotron
-        EX16) Write a function to remove the "Search" magnifying glass icon
+        EX13) Write a function to change the background of the jumbotron --
+        EX14) Write a function to remove all the links under "Elsewhere" --
+        EX15) Write a function to change the column size for heading in jumbotron --
+        EX16) Write a function to remove the "Search" magnifying glass icon --
         EX17) Write a function to trim just the first 50 characters in the first paragraph for each blog post
         EX18) Write a function and attach it to the "Newer" button, to add new Blog Post (just div and title)
         EX19) Write a function and attach it to the "Older" button, to remove the last Blog Post
@@ -522,6 +522,26 @@ body footer{
     }
     backgroundJumbotron()
 
+    const removeAllLinks = function(){
+      let olElsewhere = document.getElementsByTagName("ol")[2]
+      olElsewhere.innerHTML = ""
+    }
+    removeAllLinks()
+
+    const changeColSize = function(){
+      let col = document.getElementById("col")
+      col.classList.remove("col-md-6")
+      col.classList.add("col-md-10")
+    }
+    changeColSize()
+
+    const removeSerch = function(){
+      let icon = document.getElementsByTagName("svg")[0]
+      icon.style.display = "none"
+    }
+    removeSerch()
+
+    
     </script>
   </body>
 </html>
