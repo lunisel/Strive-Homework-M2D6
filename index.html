@@ -486,7 +486,7 @@ body footer{
       /*
         JS Exercises
         EX11) Write a function to add a new link into the navbar --
-        EX12) Write a function to change the color of the main title
+        EX12) Write a function to change the color of the main title --
         EX13) Write a function to change the background of the jumbotron
         EX14) Write a function to remove all the links under "Elsewhere"
         EX15) Write a function to change the column size for heading in jumbotron
@@ -514,6 +514,13 @@ body footer{
       title.style.color = "yellow"
     }
     changeTitleColor()
+
+    const backgroundJumbotron = function(){
+      let jumbotron = document.getElementsByClassName("jumbotron")[0]
+      jumbotron.classList.remove("bg-dark")
+      jumbotron.style.backgroundColor = "#96bdc6"
+    }
+    backgroundJumbotron()
 
     </script>
   </body>
