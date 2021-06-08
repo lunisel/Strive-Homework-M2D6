@@ -578,17 +578,14 @@ body footer{
     }
     newerB.addEventListener("click", newBlogPost)
 
-    let olderButton = document.querySelector("nav.blog-pagination a")
-    
-    const deleteBlogPost = function(){
-      let divContainerPosts = document.querySelector("div.blog-post")
-      divContainerPosts.style.display = "none"
+    let olderB = document.querySelector("nav.blog-pagination a")
+    const deletePost = function(){
+      let lastPost = document.querySelector("div.blog-main div:last-of-type")
+      lastPost.style.display= "none"
     }
-    olderButton.addEventListener("onclick", deleteBlogPost)
-
+    olderB.addEventListener("click", deletePost)
 
     
-    allertAuthor()
     </script>
   </body>
 </html>
