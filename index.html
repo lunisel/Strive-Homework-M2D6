@@ -73,7 +73,7 @@ main.container div.row div.blog-main div:first-of-type{
   background-color: coral;
 }
 
-nav > *:nth-child(2n){
+div.nav-scroller nav > *:nth-child(2n){
   background-color: cornflowerblue;
 }
 
@@ -260,12 +260,12 @@ body footer{
     <main role="main" class="container">
       <div class="row">
         <div class="col-md-8 blog-main">
-          <h3 class="pb-4 mb-4 font-italic border-bottom">From the Firehose</h3>
+          <h3 class="pb-4 mb-4 font-italic border-bottom" id="blog-post">From the Firehose</h3>
 
           <div class="blog-post">
             <h2 class="blog-post-title">Sample blog post</h2>
             <p class="blog-post-meta">
-              January 1, 2014 by <a href="#">Mark</a>
+              January 1, 2014 by <a class="author" href="#">Mark</a>
             </p>
 
             <p>
@@ -351,7 +351,7 @@ body footer{
           <div class="blog-post">
             <h2 class="blog-post-title">Another blog post</h2>
             <p class="blog-post-meta">
-              December 23, 2013 by <a href="#">Jacob</a>
+              December 23, 2013 by <a class="author" href="#">Jacob</a>
             </p>
 
             <p>
@@ -385,7 +385,7 @@ body footer{
           <div class="blog-post">
             <h2 class="blog-post-title">New feature</h2>
             <p class="blog-post-meta">
-              December 14, 2013 by <a href="#">Chris</a>
+              December 14, 2013 by <a class="author" href="#">Chris</a>
             </p>
 
             <p>
@@ -492,7 +492,7 @@ body footer{
         EX15) Write a function to change the column size for heading in jumbotron --
         EX16) Write a function to remove the "Search" magnifying glass icon --
         EX17) Write a function to trim just the first 50 characters in the first paragraph for each blog post --
-        EX18) Write a function and attach it to the "Newer" button, to add new Blog Post (just div and title)
+        EX18) Write a function and attach it to the "Newer" button, to add new Blog Post (just div and title) --
         EX19) Write a function and attach it to the "Older" button, to remove the last Blog Post
         EX20) Write an alert with the name of the author every time the user hover with the mouse over an author name
     */
@@ -558,6 +558,37 @@ body footer{
       thirdParagraph.innerHTML = newText3
     }
     remove50Characters()
+
+
+    let newerB = document.getElementsByClassName("disabled")[0]
+    newerB.classList.remove("disabled")
+    newerB.href = "#blog-post"
+    const newBlogPost = function(){
+      let divContainerPosts = document.querySelector('div.blog-main')
+      let newDiv = document.createElement("div")
+      newDiv.classList.add("blog-post")
+      let h3 = document.getElementsByTagName("h3")[2]
+      divContainerPosts.prepend(newDiv)
+      newDiv.before(h3)
+      let title = document.createElement("h2")
+      title.classList.add("blog-post-title")
+      title.innerHTML = "New Blog Post"
+      newDiv.appendChild(title)
+      
+    }
+    newerB.addEventListener("click", newBlogPost)
+
+    let olderButton = document.querySelector("nav.blog-pagination a")
+    
+    const deleteBlogPost = function(){
+      let divContainerPosts = document.querySelector("div.blog-post")
+      divContainerPosts.style.display = "none"
+    }
+    olderButton.addEventListener("onclick", deleteBlogPost)
+
+
+    
+    allertAuthor()
     </script>
   </body>
 </html>
